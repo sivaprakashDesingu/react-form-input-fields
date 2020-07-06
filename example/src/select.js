@@ -29,6 +29,7 @@ export default class Select extends React.Component {
             <FormField
                 type="select"
                 value={this.state.selectedCheckBox}
+                filter
                 option={this.state.option}
                 label={'Select Country'}
                 keys={"country"}

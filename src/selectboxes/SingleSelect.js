@@ -29,6 +29,9 @@ export default class Select extends React.Component {
 
     handleClickOutside(e) {
         if (this.state.isOpened && this.handleDocumentClickRef.contains(e.target) === false) {
+            if(this.state.tempvalue === null){
+                this.handleFloatLabel(false)
+            }
             this.setState({ isOpened: false });
         }
     }
@@ -62,6 +65,9 @@ export default class Select extends React.Component {
                     this.props.hanldeOnChange(tempvalue)
                 });
             } else if (keyCode === 9) {
+                if(this.state.tempvalue === null){
+                    this.handleFloatLabel(false)
+                }
                 this.setState({ isOpened: false })
             }
         }
@@ -71,15 +77,15 @@ export default class Select extends React.Component {
     handleChange(e, value) {
         e.preventDefault()
         this.setState({
-            isOpened: false
+            isOpened: false,
+            tempvalue:value
         }, () => {
             this.props.hanldeOnChange(value)
         });
     }
 
 
-    handleFocus(e) {
-        debugger
+    handleFocus() {
         this.setState({ isOpened: true })
     }
 
@@ -111,9 +117,8 @@ export default class Select extends React.Component {
             })
         }
     }
-    handleFloatLabel(value,decision)  {
-        debugger
-        console.log(value)
+    handleFloatLabel(value)  {
+        this.setState({isFloated:value})
     }
 
     render() {
@@ -122,7 +127,7 @@ export default class Select extends React.Component {
         const { option, label, value, keys } = this.props
        
         return (
-            <div className={`${styles.select_wrapper_material} ${isOpened ? styles.opened : null}`}>
+            <div className={`${styles.select_wrapper_material} ${isOpened ? styles.opened : ''} ${isFloated ? styles.floated : ''}`}>
                 <label 
                 htmlFor={keys}
                 className={styles.select_label}
@@ -131,7 +136,7 @@ export default class Select extends React.Component {
                     value={value}
                     id={keys}
                     ref={this.textInput}
-                    onFocus={() => [this.handleFocus(e),this.handleFloatLabel(true,'focus')]}
+                    onFocus={() => [this.handleFocus(),this.handleFloatLabel(true)]}
                     readOnly
                     className={styles.combo_input} />
                 <ul
