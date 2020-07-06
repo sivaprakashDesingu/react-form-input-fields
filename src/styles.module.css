@@ -1,0 +1,1563 @@
+/* add css module styles here (optional) */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
+ .textboxwrapper {
+	position: relative;
+}
+.textboxwrapper * {
+	padding: 0;
+	margin: 0;
+	color: #000;
+	outline: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", "arial";
+	font-size: 14px;
+}
+/* BORDER EFFECT CSS MODULE STARTS HERE*/
+
+.bordereffect {
+	margin-bottom: 20px;
+}
+.bordereffect .effect_1,
+.bordereffect .effect_2,
+.bordereffect .effect_3 {
+	border: 0;
+	padding: 15px 0;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+}
+.bordereffect .effect_1 ~ .focus_border {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+.bordereffect .effect_1:focus ~ .focus_border {
+	width: 100%;
+	transition: 0.4s;
+}
+.bordereffect .effect_2 ~ .focus_border {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+.bordereffect .effect_2:focus ~ .focus_border {
+	width: 100%;
+	transition: 0.4s;
+	left: 0;
+}
+.bordereffect .effect_3 ~ .focus_border {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	z-index: 99;
+}
+.bordereffect .effect_3 ~ .focus_border:before,
+.bordereffect .effect_3 ~ .focus_border:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+.bordereffect .effect_3 ~ .focus_border:after {
+	left: auto;
+	right: 0;
+}
+.bordereffect .effect_3:focus ~ .focus_border:before,
+.bordereffect .effect_3:focus ~ .focus_border:after {
+	width: 50%;
+	transition: 0.4s;
+}
+.bordereffect .effect_4,
+.bordereffect .effect_5,
+.bordereffect .effect_6 {
+	border: 0;
+	padding: 5px 0 7px;
+	border: 1px solid transparent;
+	border-bottom-color: #ccc;
+	transition: 0.4s;
+	width: 100%;
+}
+.bordereffect .effect_4:focus,
+.bordereffect .effect_5:focus,
+.bordereffect .effect_6:focus {
+	padding: 5px 14px 7px;
+	transition: 0.4s;
+}
+.bordereffect .effect_4 ~ .focus_border {
+	position: absolute;
+	height: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	transition: 0.4s;
+	z-index: -1;
+}
+.bordereffect .effect_4:focus ~ .focus_border {
+	transition: 0.4s;
+	height: 36px;
+	border: 2px solid #3399FF;
+	z-index: 1;
+}
+.bordereffect .effect_5 ~ .focus_border {
+	position: absolute;
+	height: 36px;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	transition: 0.4s;
+}
+.bordereffect .effect_5:focus ~ .focus_border {
+	width: 100%;
+	transition: 0.4s;
+	border: 2px solid #3399FF;
+}
+.bordereffect .effect_6 ~ .focus_border {
+	position: absolute;
+	height: 36px;
+	bottom: 0;
+	right: 0;
+	width: 0;
+	transition: 0.4s;
+}
+.bordereffect .effect_6:focus ~ .focus_border {
+	width: 100%;
+	transition: 0.4s;
+	border: 2px solid #3399FF;
+}
+.bordereffect .effect_7,
+.bordereffect .effect_8,
+.bordereffect .effect_9 {
+	border: 1px solid #ccc;
+	padding: 7px 14px 9px;
+	transition: 0.4s;
+	width: 100%;
+}
+.bordereffect .effect_7 ~ .focus_border:before,
+.bordereffect .effect_7 ~ .focus_border:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+.bordereffect .effect_7 ~ .focus_border:after {
+	top: auto;
+	bottom: 0;
+}
+.bordereffect .effect_7 ~ .focus_border .br_s_i:before,
+.bordereffect .effect_7 ~ .focus_border .br_s_i:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #3399FF;
+	transition: 0.6s;
+}
+.bordereffect .effect_7 ~ .focus_border .br_s_i:after {
+	left: auto;
+	right: 0;
+}
+.bordereffect .effect_7:focus ~ .focus_border:before,
+.bordereffect .effect_7:focus ~ .focus_border:after {
+	left: 0;
+	width: 100%;
+	transition: 0.4s;
+}
+.bordereffect .effect_7:focus ~ .focus_border .br_s_i:before,
+.bordereffect .effect_7:focus ~ .focus_border .br_s_i:after {
+	top: 0;
+	height: 100%;
+	transition: 0.6s;
+}
+.bordereffect .effect_8 ~ .focus_border:before,
+.bordereffect .effect_8 ~ .focus_border:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.3s;
+}
+.bordereffect .effect_8 ~ .focus_border:after {
+	top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
+}
+.bordereffect .effect_8 ~ .focus_border .br_s_i:before,
+.bordereffect .effect_8 ~ .focus_border .br_s_i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+.bordereffect .effect_8 ~ .focus_border .br_s_i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+.bordereffect .effect_8:focus ~ .focus_border:before,
+.bordereffect .effect_8:focus ~ .focus_border:after {
+	width: 100%;
+	transition: 0.3s;
+}
+.bordereffect .effect_8:focus ~ .focus_border .br_s_i:before,
+.bordereffect .effect_8:focus ~ .focus_border .br_s_i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+.bordereffect .effect_9 ~ .focus_border:before,
+.bordereffect .effect_9 ~ .focus_border:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.2s;
+	transition-delay: 0.2s;
+}
+.bordereffect .effect_9 ~ .focus_border:after {
+	top: auto;
+	bottom: 0;
+	right: auto;
+	left: 0;
+	transition-delay: 0.6s;
+}
+.bordereffect .effect_9 ~ .focus_border .br_s_i:before,
+.bordereffect .effect_9 ~ .focus_border .br_s_i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #3399FF;
+	transition: 0.2s;
+}
+.bordereffect .effect_9 ~ .focus_border .br_s_i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+	transition-delay: 0.4s;
+}
+.bordereffect .effect_9:focus ~ .focus_border:before,
+.bordereffect .effect_9:focus ~ .focus_border:after {
+	width: 100%;
+	transition: 0.2s;
+	transition-delay: 0.6s;
+}
+.bordereffect .effect_9:focus ~ .focus_border:after {
+	transition-delay: 0.2s;
+}
+.bordereffect .effect_9:focus ~ .focus_border .br_s_i:before,
+.bordereffect .effect_9:focus ~ .focus_border .br_s_i:after {
+	height: 100%;
+	transition: 0.2s;
+}
+.bordereffect .effect_9:focus ~ .focus_border .br_s_i:after {
+	transition-delay: 0.4s;
+}
+/* BORDER EFFECT CSS MODULE ENDS HERE*/
+
+/* BACKGROUND EFFECT CSS MODULE STARTS HERE*/
+
+.backgroundeffect {
+	margin-bottom: 20px
+}
+.backgroundeffect .effect_1,
+.backgroundeffect .effect_2,
+.backgroundeffect .effect_3,
+.backgroundeffect .effect_4,
+.backgroundeffect .effect_5,
+.backgroundeffect .effect_6 {
+	border: 0;
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #ccc;
+	position: relative;
+	background: transparent;
+}
+.backgroundeffect .effect_1 ~ .focus_bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ededed;
+	opacity: 0;
+	transition: 0.5s;
+	z-index: -1;
+}
+.backgroundeffect .effect_1:focus ~ .focus_bg {
+	transition: 0.5s;
+	opacity: 1;
+}
+.backgroundeffect .effect_2 ~ .focus_bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background-color: #ededed;
+	transition: 0.3s;
+	z-index: -1;
+}
+.backgroundeffect .effect_2:focus ~ .focus_bg {
+	transition: 0.3s;
+	width: 100%;
+}
+.backgroundeffect .effect_3 ~ .focus_bg {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background-color: #ededed;
+	transition: 0.3s;
+	z-index: -1;
+}
+.backgroundeffect .effect_3:focus ~ .focus_bg {
+	transition: 0.3s;
+	width: 100%;
+	left: 0;
+}
+.backgroundeffect .effect_4 ~ .focus_bg:before,
+.backgroundeffect .effect_4 ~ .focus_bg:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background-color: #ededed;
+	transition: 0.3s;
+	z-index: -1;
+}
+.backgroundeffect .effect_4:focus ~ .focus_bg:before {
+	transition: 0.3s;
+	width: 50%;
+}
+.backgroundeffect .effect_4 ~ .focus_bg:after {
+	left: auto;
+	right: 0;
+}
+.backgroundeffect .effect_4:focus ~ .focus_bg:after {
+	transition: 0.3s;
+	width: 50%;
+}
+.backgroundeffect .effect_5 ~ .focus_bg:before,
+.backgroundeffect .effect_5 ~ .focus_bg:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	background-color: #ededed;
+	transition: 0.3s;
+	z-index: -1;
+}
+.backgroundeffect .effect_5:focus ~ .focus_bg:before {
+	transition: 0.3s;
+	width: 50%;
+	height: 100%;
+}
+.backgroundeffect .effect_5 ~ .focus_bg:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+.backgroundeffect .effect_5:focus ~ .focus_bg:after {
+	transition: 0.3s;
+	width: 50%;
+	height: 100%;
+}
+.backgroundeffect .effect_6 ~ .focus_bg:before,
+.backgroundeffect .effect_6 ~ .focus_bg:after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 0;
+	height: 0;
+	background-color: #ededed;
+	transition: 0.3s;
+	z-index: -1;
+}
+.backgroundeffect .effect_6:focus ~ .focus_bg:before {
+	transition: 0.3s;
+	width: 50%;
+	left: 0;
+	top: 0;
+	height: 100%;
+}
+.backgroundeffect .effect_6 ~ .focus_bg:after {
+	left: auto;
+	right: 50%;
+	top: auto;
+	bottom: 50%;
+}
+.backgroundeffect .effect_6:focus ~ .focus_bg:after {
+	transition: 0.3s;
+	width: 50%;
+	height: 100%;
+	bottom: 0;
+	right: 0;
+}
+/* BACKGROUND EFFECT CSS MODULE ENDS HERE*/
+
+/* LABEL EFFECT CSS MODULE STARTS HERE*/
+
+.labeleffect {
+	margin-bottom: 20px;
+}
+.labeleffect .effect_1,
+.labeleffect .effect_2,
+.labeleffect .effect_3 {
+	border: 0;
+	padding: 12px 0 5px;
+	width:100%;
+	border-bottom: 1px solid #ccc;
+	background-color: transparent;
+}
+.labeleffect .effect_1 ~ .focus_border {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+.labeleffect .effect_1:focus ~ .focus_border,
+.labeleffect .has_content.effect_1 ~ .focus_border {
+	width: 100%;
+	transition: 0.4s;
+}
+.labeleffect  .effect_1 ~ .inp_label {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 9px;
+	color: #aaa;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.labeleffect .effect_1:focus ~ .inp_label,
+.labeleffect .has_content.effect_1 ~ .inp_label {
+	top: -16px;
+	font-size: 12px;
+	color: #3399FF;
+	transition: 0.3s;
+}
+.labeleffect .effect_2 ~ .focus_border {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+.labeleffect .effect_2:focus ~ .focus_border,
+.labeleffect .has_content.effect_2 ~ .focus_border {
+	width: 100%;
+	transition: 0.4s;
+	left: 0;
+}
+.labeleffect .effect_2 ~ .inp_label {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 9px;
+	color: #aaa;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.labeleffect .effect_2:focus ~ .inp_label,
+.labeleffect .has_content.effect_2 ~ .inp_label {
+	top: -16px;
+	font-size: 12px;
+	color: #3399FF;
+	transition: 0.3s;
+}
+.labeleffect .effect_3 ~ .focus_border {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	z-index: 99;
+}
+.labeleffect .effect_3 ~ .focus_border:before,
+.labeleffect .effect_3 ~ .focus_border:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+.labeleffect .effect_3 ~ .focus_border:after {
+	left: auto;
+	right: 0;
+}
+.labeleffect .effect_3:focus ~ .focus_border:before,
+.labeleffect .effect_3:focus ~ .focus_border:after,
+.labeleffect .has_content.effect_3 ~ .focus_border:before,
+.labeleffect .has_content.effect_3 ~ .focus_border:after {
+	width: 50%;
+	transition: 0.4s;
+}
+.labeleffect .effect_3 ~ .inp_label {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 9px;
+	color: #aaa;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.labeleffect .effect_3:focus ~ .inp_label,
+.labeleffect .has_content.effect_3 ~ .inp_label {
+	top: -16px;
+	font-size: 12px;
+	color: #3399FF;
+	transition: 0.3s;
+}
+.labeleffect .effect_4,
+.labeleffect .effect_5,
+.labeleffect .effect_6 {
+	border: 1px solid #ccc;
+	padding: 15px;
+	transition: 0.4s;
+	width:100%;
+	background: transparent;
+}
+.labeleffect .effect_4 ~ .focus_border:before,
+.labeleffect .effect_4 ~ .focus_border:after {
+	content: "";
+	position: absolute;
+	top: -1px;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+.labeleffect .effect_4 ~ .focus_border:after {
+	top: auto;
+	bottom: 0;
+}
+.labeleffect .effect_4 ~ .focus_border .br_s_i:before,
+.labeleffect .effect_4 ~ .focus_border .br_s_i:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #3399FF;
+	transition: 0.6s;
+}
+.labeleffect .effect_4 ~ .focus_border i:after {
+	left: auto;
+	right: 0;
+}
+.labeleffect .effect_4:focus ~ .focus_border:before,
+.labeleffect .effect_4:focus ~ .focus_border:after,
+.labeleffect .has_content.effect_4 ~ .focus_border:before,
+.labeleffect .has_content.effect_4 ~ .focus_border:after {
+	left: 0;
+	width: 100%;
+	transition: 0.4s;
+}
+.labeleffect .effect_4:focus ~ .focus_border .br_s_i:before,
+.labeleffect .effect_4:focus ~ .focus_border .br_s_i:after,
+.labeleffect .has_content.effect_4 ~ .focus_border .br_s_i:before,
+.labeleffect .has_content.effect_4 ~ .focus_border .br_s_i:after {
+	top: -1px;
+	height: 100%;
+	transition: 0.6s;
+}
+.labeleffect .effect_4 ~ .inp_label {
+	position: absolute;
+	left: 14px;
+	width: 100%;
+	top: calc(50% - 8px);
+	color: #aaa;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.labeleffect .effect_4:focus ~ .inp_label,
+.labeleffect .has_content.effect_4 ~ .inp_label {
+	top: -18px;
+	left: 0;
+	font-size: 12px;
+	color: #3399FF;
+	transition: 0.3s;
+}
+.labeleffect .effect_5 ~ .focus_border:before,
+.labeleffect .effect_5 ~ .focus_border:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.3s;
+}
+.labeleffect .effect_5 ~ .focus_border:after {
+	top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
+}
+.labeleffect .effect_5 ~ .focus_border .br_s_i:before,
+.labeleffect .effect_5 ~ .focus_border .br_s_i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+.labeleffect .effect_5 ~ .focus_border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+.labeleffect .effect_5:focus ~ .focus_border:before,
+.labeleffect .effect_5:focus ~ .focus_border:after,
+.labeleffect .has_content.effect_5 ~ .focus_border:before,
+.labeleffect .has_content.effect_5 ~ .focus_border:after {
+	width: 100%;
+	transition: 0.3s;
+}
+.labeleffect .effect_5:focus ~ .focus_border .br_s_i:before,
+.labeleffect .effect_5:focus ~ .focus_border .br_s_i:after,
+.labeleffect .has_content.effect_5 ~ .focus_border .br_s_i:before,
+.labeleffect .has_content.effect_5 ~ .focus_border .br_s_i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+.labeleffect .effect_5 ~ .inp_label {
+	position: absolute;
+	left: 14px;
+	width: 100%;
+	top: calc(50% - 8px);
+	color: #aaa;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.labeleffect .effect_5:focus ~ .inp_label,
+.labeleffect .has_content.effect_5 ~ .inp_label {
+	top: -18px;
+	left: 0;
+	font-size: 12px;
+	color: #3399FF;
+	transition: 0.3s;
+}
+.labeleffect .effect_6 ~ .focus_border:before,
+.labeleffect .effect_6 ~ .focus_border:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.2s;
+	transition-delay: 0.2s;
+}
+.labeleffect .effect_6 ~ .focus_border:after {
+	top: auto;
+	bottom: 0;
+	right: auto;
+	left: 0;
+	transition-delay: 0.6s;
+}
+.labeleffect .effect_6 ~ .focus_border .br_s_i:before,
+.labeleffect .effect_6 ~ .focus_border .br_s_i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #3399FF;
+	transition: 0.2s;
+}
+.labeleffect .effect_6 ~ .focus_border .br_s_i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+	transition-delay: 0.4s;
+}
+.labeleffect .effect_6:focus ~ .focus_border:before,
+.labeleffect .effect_6:focus ~ .focus_border:after,
+.labeleffect .has_content.effect_6 ~ .focus_border:before,
+.labeleffect .has_content.effect_6 ~ .focus_border:after {
+	width: 100%;
+	transition: 0.2s;
+	transition-delay: 0.6s;
+}
+.labeleffect .effect_6:focus ~ .focus_border:after,
+.labeleffect .has_content.effect_6 ~ .focus_border:after {
+	transition-delay: 0.2s;
+}
+.labeleffect .effect_6:focus ~ .focus_border .br_s_i:before,
+.labeleffect .effect_6:focus ~ .focus_border .br_s_i:after,
+.labeleffect .has_content.effect_6 ~ .focus_border .br_s_i:before,
+.labeleffect .has_content.effect_6 ~ .focus_border .br_s_i:after {
+	height: 100%;
+	transition: 0.2s;
+}
+.labeleffect .effect_6:focus ~ .focus_border i:after,
+.labeleffect .has-conten.effect_6 ~ .focus_border i:after {
+	transition-delay: 0.4s;
+}
+.labeleffect .effect_6 ~ .inp_label {
+	position: absolute;
+	left: 14px;
+	width: 100%;
+	top: calc(50% - 8px);
+	color: #aaa;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.labeleffect .effect_6:focus ~ .inp_label,
+.labeleffect .has_content.effect_6 ~ .inp_label {
+	top: -18px;
+	left: 0;
+	font-size: 12px;
+	color: #3399FF;
+	transition: 0.3s;
+}
+.labeleffect .effect_7,
+.labeleffect .effect_8,
+.labeleffect .effect_9 {
+	border: 0;
+	padding: 15px;
+	width:100%;
+	border: 1px solid #ccc;
+	position: relative;
+	background: transparent;
+}
+.labeleffect .effect_7 ~ .focus_bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background-color: transparent;
+	transition: 0.4s;
+	z-index: -1;
+}
+.labeleffect .effect_7:focus ~ .focus_bg,
+.labeleffect .has_content.effect_7 ~ .focus_bg {
+	transition: 0.4s;
+	width: 100%;
+	background-color: #ededed;
+}
+.labeleffect .effect_7 ~ .inp_label {
+	position: absolute;
+	left: 14px;
+	width: 100%;
+	top: calc(50% - 8px);
+	color: #aaa;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.labeleffect .effect_7:focus ~ .inp_label,
+.labeleffect .has_content.effect_7 ~ .inp_label {
+	top: -18px;
+	left: 0;
+	font-size: 12px;
+	color: #333;
+	transition: 0.3s;
+}
+.labeleffect .effect_8 ~ .focus_bg:before,
+.labeleffect .effect_8 ~ .focus_bg:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	background-color: #ededed;
+	transition: 0.3s;
+	z-index: -1;
+}
+.labeleffect .effect_8:focus ~ .focus_bg:before,
+.labeleffect .has_content.effect_8 ~ .focus_bg:before {
+	transition: 0.3s;
+	width: 50%;
+	height: 100%;
+}
+.labeleffect .effect_8 ~ .focus_bg:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+.labeleffect .effect_8:focus ~ .focus_bg:after,
+.labeleffect .has_content.effect_8 ~ .focus_bg:after {
+	transition: 0.3s;
+	width: 50%;
+	height: 100%;
+}
+.labeleffect .effect_8 ~ .inp_label {
+	position: absolute;
+	left: 14px;
+	width: 100%;
+	top: calc(50% - 8px);
+	color: #aaa;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.labeleffect .effect_8:focus ~ .inp_label,
+.labeleffect .has_content.effect_8 ~ .inp_label {
+	top: -18px;
+	left: 0;
+	font-size: 12px;
+	color: #333;
+	transition: 0.3s;
+}
+.labeleffect .effect_9 ~ .focus_bg:before,
+.labeleffect .effect_9 ~ .focus_bg:after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 0;
+	height: 0;
+	background-color: #ededed;
+	transition: 0.3s;
+	z-index: -1;
+}
+.labeleffect .effect_9:focus ~ .focus_bg:before,
+.labeleffect .has_content.effect_9 ~ .focus_bg:before {
+	transition: 0.3s;
+	width: 50%;
+	left: 0;
+	top: 0;
+	height: 100%;
+}
+.labeleffect .effect_9 ~ .focus_bg:after {
+	left: auto;
+	right: 50%;
+	top: auto;
+	bottom: 50%;
+}
+.labeleffect .effect_9:focus ~ .focus_bg:after,
+.labeleffect .has_content.effect_9 ~ .focus_bg:after {
+	transition: 0.3s;
+	width: 50%;
+	height: 100%;
+	bottom: 0;
+	right: 0;
+}
+.labeleffect .effect_9 ~ .inp_label {
+	position: absolute;
+	left: 14px;
+	width: 100%;
+	top: calc(50% - 8px);
+	color: #aaa;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.labeleffect .effect_9:focus ~ .inp_label,
+.labeleffect .has_content.effect_9 ~ .inp_label {
+	top: -18px;
+	left: 0;
+	font-size: 12px;
+	color: #333;
+	transition: 0.3s;
+}
+/* LABEL EFFECT CSS MODULE ENDS HERE*/
+
+/* SWITCH MODULE STARTS HERE*/
+.switch_wrapper{
+	position: relative;
+}
+.switch_wrapper *{
+	padding: 0;
+	margin: 0;
+	color: #000;
+	outline: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", "arial";
+	font-size: 14px;
+}
+.pure_material_switch{
+	z-index: 0;
+    position: relative;
+    display: inline-block;
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.pure_material_switch > .switch_input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    z-index: -1;
+    position: absolute;
+    right: 6px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+}
+.pure_material_switch > .switch_span {
+    display: inline-block;
+    width: 100%;
+	cursor: pointer;
+	vertical-align:middle;
+}
+
+/* Track */
+.pure_material_switch > .switch_span::before {
+    content: "";
+    float: right;
+    display: inline-block;
+    margin: 5px 0 5px 10px;
+    border-radius: 7px;
+    width: 50px;
+    height: 14px;
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    vertical-align: top;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+/* Thumb */
+.pure_material_switch > .switch_span::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 30px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+/* Checked */
+.pure_material_switch > .switch_input:checked {
+    right: -10px;
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.pure_material_switch > .switch_input:checked + .switch_span::before {
+    background-color: rgba(var(--pure-material-primary-rgb, 33, 150, 243), 0.6);
+}
+
+.pure_material_switch > .switch_input:checked + .switch_span::after {
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    transform: translateX(30px);
+}
+
+/* Hover, Focus */
+.pure_material_switch:hover > .switch_input {
+    opacity: 0.04;
+}
+
+.pure_material_switch > .switch_input:focus {
+    opacity: 0.12;
+}
+
+.pure_material_switch:hover > .switch_input:focus {
+    opacity: 0.16;
+}
+
+/* Active */
+.pure_material_switch > .switch_input:active {
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0s, opacity 0s;
+}
+
+.pure_material_switch > .switch_input:active + .switch_span::before {
+    background-color: rgba(var(--pure-material-primary-rgb, 33, 150, 243), 0.6);
+}
+
+.pure_material_switch > .switch_input:checked:active + .switch_span::before {
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+}
+
+/* Disabled */
+.pure_material_switch > .switch_input:disabled {
+    opacity: 0;
+}
+
+.pure_material_switch > .switch_input:disabled + .switch_span {
+    color: rgb(var(--pure-material-onsurface-rgb, 0, 0, 0));
+    opacity: 0.38;
+    cursor: default;
+}
+
+.pure_material_switch > .switch_input:disabled + .switch_span::before {
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+}
+
+.pure_material_switch > .switch_input:checked:disabled + .switch_span::before {
+    background-color: rgba(var(--pure-material-primary-rgb, 33, 150, 243), 0.6);
+}
+
+
+/* SWITCH MODULE ENDS HERE*/
+
+/* CHECKBOX MODULE STARTS HERE*/
+.checkbox_wrapper{
+	position: relative;
+	margin-bottom:20px;
+}
+.checkbox_wrapper *{
+	padding: 0;
+	margin: 0;
+	color: #000;
+	outline: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", "arial";
+	font-size: 14px;
+}
+.checkbox_wrapper .pure_material_checkbox {
+	position: relative;
+	margin: .5rem;
+	line-height: 135%;
+	cursor: pointer;
+  }
+  .pure_material_checkbox {
+	position: relative;
+	top: rem(-6);
+	margin: 0 1rem 0 0 ;
+	cursor: pointer;
+  }
+.effect_1 .checkbox_input:before {
+	transition:all .3s ease-in-out;
+	content: "";
+	position: absolute;
+	left: 0;
+	z-index: 1;
+	width: 1rem;
+	height: 1rem;    
+	border: 2px solid #009688; 
+}
+.effect_1 .checkbox_input:after {
+	content: "";
+	position: absolute;
+	top: -0.125rem;
+	left: 0;
+	width: 1.1rem;
+	height: 1.1rem;
+	background: #fff;
+	cursor: pointer;
+  }
+.effect_1 .checkbox_input.cbChecked:before{
+	transform:rotate(-45deg);	
+	height: .5rem;
+	border-color: #009688;
+	border-top-style: none;
+	border-right-style: none;
+}
+.effect_1 .checkbox_span{
+	padding-left:20px;
+}
+
+/* Effect_2 */
+.effect_2 {
+	transform: translateZ(0);
+}
+.effect_2 .label_text{
+	padding-left:10px;
+}
+.effect_2  .pure_material_checkbox{
+	cursor: pointer;
+    padding-left: 0;
+}
+.effect_2 .checkbox_input { 
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: 0;
+    pointer-events: none;
+}
+.effect_2 .checkbox_material{
+	vertical-align: middle;
+    position: relative;
+    top: 3px;
+}
+.effect_2 .checkbox_material::before{
+	position: absolute;
+      left: 8px;
+      top: 2px;
+      content: "";
+      background-color: rgba(0,0,0,0.5);
+      height: 4px;
+      width: 4px;
+      border-radius: 100%;
+      z-index: 1;
+      opacity: 0;
+      margin: 0;
+}
+.effect_2 .check{
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #009688;
+	border-radius: 2px;
+	overflow: hidden;
+	z-index: 1;
+	color:#009688;
+}
+.effect_2 .check::before{
+	position: absolute;
+	content: "";
+	transform: rotate(45deg);
+	display: block;
+	margin-top: -4px;
+	margin-left: 6px;
+	width: 0;
+	height: 0;
+	box-shadow:
+	  0 0 0 0,
+	  0 0 0 0,
+	  0 0 0 0,
+	  0 0 0 0,
+	  0 0 0 0,
+	  0 0 0 0,
+	  0 0 0 0 inset;
+	/*background:#009688;*/
+	animation: checkbox-off 0.3s forwards ease-out;
+}
+.effect_2 .checkbox_input:focus + .checkbox_material .check:after {
+    opacity: 0.2;
+}
+
+.effect_2 .checkbox_input.cbChecked + .checkbox_material .check {
+	color:#009688;
+}
+.effect_2 .checkbox_input.cbChecked + .checkbox_material .check:before {
+    box-shadow:
+      0 0 0 10px,
+      10px -10px 0 10px,
+      32px 0px 0 20px,
+      0px 32px 0 20px,
+      -5px 5px 0 10px,
+      20px -12px 0 11px;
+	animation: checkbox-on 0.3s forwards ease-out;
+	
+  }
+  .effect_2 .checkbox_input + .checkbox_material:before {
+    animation: rippleOff 700ms forwards ease-out;
+}
+.effect_2 .checkbox_input.cbChecked + .checkbox_material::before{
+	animation: rippleOn 700ms forwards ease-out;
+}
+/* Ripple effect on click*/
+.effect_2 .checkbox_input + .checkbox_material .check:after {
+  animation: rippleOff 700ms forwards ease-out;
+}
+.effect_2 .checkbox_input.cbChecked + .checkbox_material .check:after {
+  animation: rippleOn 700ms forwards ease-out;
+}
+/* EFfect_2 */
+/* CHECKBOX MODULE ENDS HERE*/
+
+/* RADIO BUTTON MODULE STARTS HERE*/
+.radio_button_wrapper{
+position: relative;
+margin-bottom:20px;
+}
+.radio_button_wrapper *{
+	padding: 0;
+	margin: 0;
+	color: #000;
+	outline: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", "arial";
+	font-size: 14px;	
+}
+.radio_button_wrapper .pure_material_radio{
+	z-index: 0;
+    position: relative;
+    display: inline-block;
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 16px;
+    line-height: 1.5;
+}
+.radio_button_wrapper .pure_material_radio > .radio_input {
+	appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    z-index: -1;
+    position: absolute;
+    left: -10px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+.radio_button_wrapper .pure_material_radio > .label_text {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+/* circle */
+.radio_button_wrapper .pure_material_radio > .label_text::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 2px 10px 2px 0;
+    border: solid 2px; /* Safari */
+    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    vertical-align: top;
+    transition: border-color 0.2s;
+}
+/* check */
+.radio_button_wrapper .pure_material_radio > .label_text::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    transform: translate(5px, 5px) scale(0);
+    transition: transform 0.2s;
+}
+/* Checked */
+.radio_button_wrapper .pure_material_radio > .radio_input.rbChecked {
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.radio_button_wrapper .pure_material_radio > .radio_input.rbChecked + .label_text::before {
+    border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.radio_button_wrapper .pure_material_radio > .radio_input.rbChecked + .label_text::after {
+    transform: translate(5px, 5px) scale(1);
+}
+/* RADIO BUTTON  MODULE ENDS HERE*/
+
+
+/* SELECT VIEW MODULE STARTS HERE */
+.select_wrapper_material{
+	margin-bottom:20px;
+	position: relative;
+	width:100%;
+	border-bottom: 1px solid #ddd;
+    padding: 30px 0 0;
+}
+.select_wrapper_material * {
+	padding: 0;
+	margin: 0;
+	color: #000;
+	outline: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", "arial";
+	font-size: 14px;
+}
+
+.select_wrapper_material .search_select {
+	position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    opacity: 0;
+}
+.select_wrapper_material .combo_input{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	border: none;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0;
+	height: 34px;
+	line-height: 34px;
+	padding-right: 34px;
+	border-radius: 0px;
+	font-size: 14px;
+}
+.select_wrapper_material .combo_input:focus{
+	outline: none;
+}
+.select_wrapper_material .material_custom_select {
+	position: absolute;
+	z-index: 999;
+	top: 100%;
+	left: 0;
+	min-width: 100%;
+	max-width: 300px;
+	max-height: 270px;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+	overflow-y: auto;
+	background: #fff;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 6px rgba(0, 0, 0, 0.12);
+	-webkit-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+	border-radius: 0;
+	box-sizing: border-box;
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	-webkit-transform-origin: top left;
+	-ms-transform-origin: top left;
+	transform-origin: top left;
+}
+.select_wrapper_material .material_custom_select .material_custom_select_item{
+	list-style: none;
+	padding: 10px 15px;
+	cursor:pointer;
+	text-align: left;
+    border: 0;
+}
+.opened .search_select{
+	z-index:-1;
+}
+
+.material_custom_select_item.active_item{
+	background-color: #efefef;
+	color: #454545;	
+}
+.select_wrapper_material .material_custom_select .material_custom_select_item:hover{
+	background-color: #efefef;
+	color: #454545;
+}
+.select_wrapper_material .select_label {
+	position: absolute;
+	top: 40px;
+    left: 0;
+    transition: .3s ease all;
+}
+.select_wrapper_material.floated .select_label{
+	top: 15px;
+    font-size: 12px;
+}
+/**
+ * On Active
+ */
+ .opened .material_custom_select {
+	display: block;
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
+}
+/**
+ * Search marker
+ */
+.combo-marker {
+	text-decoration: underline;
+}
+/* SELECT VIEW M
+ODULE ENDS HERE */
+/* Key Frames */
+@keyframes checkbox-on {
+	0% {
+	  box-shadow:
+		0 0 0 10px,
+		10px -10px 0 10px,
+		32px 0px 0 20px,
+		0px 32px 0 20px,
+		-5px 5px 0 10px,
+		15px 2px 0 11px;
+	}
+	50% {
+	  box-shadow:
+		0 0 0 10px,
+		10px -10px 0 10px,
+		32px 0px 0 20px,
+		0px 32px 0 20px,
+		-5px 5px 0 10px,
+		20px 2px 0 11px;
+	}
+	100% {
+	  box-shadow:
+		0 0 0 10px,
+		10px -10px 0 10px,
+		32px 0px 0 20px,
+		0px 32px 0 20px,
+		-5px 5px 0 10px,
+		20px -12px 0 11px;
+	}
+  }
+  @keyframes checkbox-off {
+	0% {
+	  box-shadow:
+		0 0 0 10px,
+		10px -10px 0 10px,
+		32px 0px 0 20px,
+		0px 32px 0 20px,
+		-5px 5px 0 10px,
+		20px -12px 0 11px,
+		0 0 0 0 inset;
+	}
+  
+	25% {
+	  box-shadow:
+		0 0 0 10px,
+		10px -10px 0 10px,
+		32px 0px 0 20px,
+		0px 32px 0 20px,
+		-5px 5px 0 10px,
+		20px -12px 0 11px,
+		0 0 0 0 inset;
+	}
+	50% {
+	  transform: rotate(45deg);
+	  margin-top: -4px;
+	  margin-left: 6px;
+	  width: 0px;
+	  height: 0px;
+	  box-shadow:
+		0 0 0 10px,
+		10px -10px 0 10px,
+		32px 0px 0 20px,
+		0px 32px 0 20px,
+		-5px 5px 0 10px,
+		15px 2px 0 11px,
+		0 0 0 0 inset;
+	}
+	51% {
+	  transform: rotate(0deg);
+	  margin-top: -2px;
+	  margin-left: -2px;
+	  width: 20px;
+	  height: 20px;
+	  box-shadow:
+		0 0 0 0,
+		0 0 0 0,
+		0 0 0 0,
+		0 0 0 0,
+		0 0 0 0,
+		0 0 0 0,
+		0px 0px 0 10px inset;
+	}
+	100% {
+	  transform: rotate(0deg);
+	  margin-top: -2px;
+	  margin-left: -2px;
+	  width: 20px;
+	  height: 20px;
+	  box-shadow:
+		0 0 0 0,
+		0 0 0 0,
+		0 0 0 0,
+		0 0 0 0,
+		0 0 0 0,
+		0 0 0 0,
+		0px 0px 0 0px inset;
+	}
+  }
+  @keyframes rippleOn {
+	0% {
+	  opacity: 0.5;
+	}
+	100% {
+	  opacity: 0;
+	  transform: scale(13,13);
+	}
+  }
+  @keyframes rippleOff {
+	0% {
+	  opacity: 0.5;
+	}
+	100% {
+	  opacity: 0;
+	  transform: scale(13,13);
+	}
+  }
+/* Key Frames */
