@@ -16,7 +16,7 @@ export default class Select extends React.Component {
                 { label: 'Angola', value: "Angola" },
 
             ],
-            option1: ["male" ,"female"]
+            option1: ["India" ,"China","Japan","Indo"]
         }
     }
 
@@ -30,7 +30,7 @@ export default class Select extends React.Component {
                 type="select"
                 value={this.state.selectedCheckBox}
                 filter
-                option={this.state.option}
+                option={this.state.option1}
                 label={'Select Country'}
                 keys={"country"}
                 hanldeOnChange={(value) => this.hanldeOnChange(value)} />

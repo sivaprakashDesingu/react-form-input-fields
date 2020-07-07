@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './../styles.module.css';
 
 
-export default class Select extends React.Component {
+export default class MultiSelect extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -226,7 +226,7 @@ export default class Select extends React.Component {
     }
 }
 
-Select.defaultProps = {
+MultiSelect.defaultProps = {
     value: '',
     label: '',
     effect: 'effect_1',

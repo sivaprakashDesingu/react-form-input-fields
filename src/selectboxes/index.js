@@ -22,13 +22,18 @@ export default class Select extends React.Component {
     componentDidMount () {
         document.addEventListener("keydown", this.handleKeyDown, false);
         document.addEventListener('mousedown', this.handleClickOutside, false)
-        console.log(this.state)
-        console.log(this.props)
     }
 
     componentWillUnmount () {
         document.removeEventListener("keydown", this.handleKeyDown, false);
         //document.removeEventListener("mousedown", this.handleMouseDown);
+    }
+
+    componentDidUpdate(prevProps,prevState) {
+
+        if(this.props.value !== prevProps.value){
+            this.setState({filterValue:this.props.value,value:this.props.value})
+        }
     }
 
     handleClickOutside (e) {
@@ -88,7 +93,7 @@ export default class Select extends React.Component {
         });
     }
 
-    handleFocus () {
+    handleFocus = (event) => {
         this.setState({ isOpened: true })
     }
 
@@ -99,10 +104,11 @@ export default class Select extends React.Component {
     renderOption = (option, value, tempvalue, filterValue, filter) => {
         let notfound = 0;
         if (option.length >= 1 && typeof (option[0]) === 'object') {
+            
             return option.map((item, i) => {
-                if (value.includes(item.value)) {
+                /*if (!filter && filterValue.includes(item.value)) {
                     return null;
-                } else if (filterValue.trim().length >= 1) {
+                } else*/ if (filter && filterValue.trim().length >= 1) {
                     if (item.value.toUpperCase().includes(filterValue.toUpperCase())) {
                         return (
                             <li
@@ -137,17 +143,11 @@ export default class Select extends React.Component {
             });
         } else {
             return option.map((item, i) => {
-                // return (
-                //     <li
-                //         key={'select' + i}
-                //         onClick={(e) => this.handleChange(e, item)}
-                //         className={`${styles.material_custom_select_item} ${tempvalue === item ? styles.active_item : ''}`}
-                //         data-index={i + 1}>{item}</li>
-                // )
-                if (value.includes(data)) {
+                
+                /*if (!filter && filterValue.includes(item)) {
                     return null;
-                } else if (filterValue.trim().length >= 1) {
-                    if (data.toUpperCase().includes(filterValue.toUpperCase())) {
+                } else*/ if (filter && filterValue.trim().length >= 1) {
+                    if (item.toUpperCase().includes(filterValue.toUpperCase())) {
                         return (
                             <li
                             key={'select' + i}
@@ -189,26 +189,32 @@ export default class Select extends React.Component {
 
         const { isOpened, tempvalue,isFloated,filterValue } = this.state
         const { option, label, value, keys,filter } = this.props
-        console.log(this.props)
 
         return (
             <div className={`${styles.select_wrapper_material} ${isOpened ? styles.opened : ''} ${isFloated ? styles.floated : ''}`}>
+                <form autoComplete="new-form">
                 <label 
                 htmlFor={keys}
                 className={styles.select_label}
                 >{label}</label>
                 <input type="text"
-                    value={value}
+                    value={filterValue}
                     id={keys}
                     ref={this.textInput}
-                    onFocus={() => [this.handleFocus(),this.handleFloatLabel(true)]}
-                    readOnly={filter}
+                    autoComplete={`new-off`}
+                    onFocus={(event) => [
+                        event.target.setAttribute('autocomplete', 'off'),
+                        this.handleFocus(event),
+                        this.handleFloatLabel(true)]}
+                    readOnly={!filter}
                     onChange={
                         filter
-                            ? e => this.setState({filterValuee:e.target.value})
+                            ? e => this.setState({filterValue:e.target.value})
                             : () => console.log()
                     }
-                    className={styles.combo_input} />
+                    className={styles.combo_input} />    
+                </form>
+                
                 <ul
                     ref={node => (this.handleDocumentClickRef = node)}
                     className={styles.material_custom_select}>
