@@ -1,7 +1,6 @@
 # react-form-fields
 
-react-form-fields libaray will be used to create innovative/varities of form fields. The library has form fields such as TextBox,Switch,Checkbox,RadioButton,Select/Dropdown..
-
+react-form-fields library will be used to create innovative/varieties of form fields. The library has form fields such as Text Box,Switch,Checkbox,Radio Button,Select/Dropdown.
   
 
 ## Install and Setup
@@ -33,29 +32,27 @@ handleOnChange={(value) => this.handleOnChange(value, 'name')}
 placeholder={'Enter Email'} />
 ```
 
-
 **Props**
 
-
+ 
 | Props | Description | values |is Mandatory|
 | --- | --- | ---|---|
 | type | To render Text box |email,text,password,number| yes |
 | standard | Text box with styles |bordereffect,backgroundeffect,labeleffect| yes |
 | value | Text box value |based on the input type| No |
-| keys |Ideally this will be your state property for web accessibility for label |your choice| yes|
+| keys |Ideally this will be your state property for web accessibility for label  |your choice| yes|
 | effect | what kind of effect that you want |**bordereffect**=>effect_1,effect_2,effect_3,effect_4,effect_5,effect_6,effect_7,effect_8,effect_9| No|
 |||**backgroundeffect**=> effect_1,effect_2,effect_3,effect_4,effect_5,effect_6|
 |||**labeleffect**=>effect_1,effect_2,effect_3,effect_4,effect_5,effect_6,effect_7,effect_8,effect_9| No|
 | handleOnChange | Call back function for value change|| yes |
 | placeholder |Placeholder/Label text value| Any string| yes |
-
-
-
+  
 
 ## How to render Select/DropDown/Auto-complete
 
 Select view is one of the form fields which will be used to choose one/more option among the values for best example we can say country selection. This will be used in server functionality such as *singe value, Multivalue,single value with filter,
 multivalue with filter,multivalue with maxcount etc...* which are going to be decided using props value. 
+
 ### Single value example code
 ```const option = ['Male, Female']
 <FormField
@@ -123,6 +120,51 @@ label={'Select Languages'}
 keys={"language"}
 hanldeOnChange={(value) =>  this.hanldeOnChange(value)}  />
 ```
+## How to render Switch 
+Switch field will be used when we have option like ***off/On*** controll.
+```
+<FormField
+type="switch"
+value={mode}
+label="Toggle"
+hanldeOnChange={(value) =>  this.hanldeOnChange(value)}/>
+```
+
+## How to render Check Box
+ 
+Check box for known language selection etc...
+```
+const selectedCheckBox: [],
+const option: [
+{ label:  'Tamil', value:  "Tamil" },
+{ label:  'English', value:  "English" },
+{ label:  'Telugu', value:  "Telugu" }
+]
+
+<FormField
+type="checkbox"
+effect={`effect_1` || `effect_2` || `effect_3` }
+value={selectedCheckBox.includes(data.value) ? true : false}
+valueToBeReturned={data.value}
+label={data.label}
+keys={data.label}
+hanldeOnChange={(value) =>  this.hanldeOnChange(value)}/>
+```
+
+## How to render Radio button
 
 
-
+```
+const selectedvalue:  'male',
+const option: [
+{ label:  'Male', value:  "male" },
+{ label:  'Female', value:  "female" },
+]
+<FormField
+type="radio"
+value={selectedCheckBox === data.value ? true : false}
+valueToBeReturned={data.value}
+label={data.label}
+keys={data.label}
+hanldeOnChange={(value) =>  this.hanldeOnChange(value)}  />
+```

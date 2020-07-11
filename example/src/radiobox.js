@@ -7,7 +7,7 @@ export default class RadioButton extends React.Component {
         super(props)
         this.state = {
             mode: true,
-            selectedvalue: 'siva',
+            selectedvalue: 'male',
             option: [
                 { label: 'Male', value: "male" },
                 { label: 'Female', value: "female" },
