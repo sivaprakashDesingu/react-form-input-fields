@@ -6,7 +6,7 @@ export default class Select extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectedvalue: '',
+            selectedvalue: ['China'],
             option: [
                 { label: 'Afganistan', value: "Afganistan" },
                 { label: 'Albania', value: "Albania" },
@@ -28,8 +28,9 @@ export default class Select extends React.Component {
         return (
             <FormField
                 type="select"
-                value={this.state.selectedCheckBox}
+                value={this.state.selectedvalue}
                 filter
+                multi
                 option={this.state.option1}
                 label={'Select Country'}
                 keys={"country"}

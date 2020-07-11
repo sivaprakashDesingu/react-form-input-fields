@@ -1,5 +1,6 @@
 import React from 'react'
 import { BorderEffect, BackgroundEffect, LabelEffect, Switch, CheckBox, RadioButton,Select } from './allFields'
+import { MultiSelect } from './selectboxes';
 
 export const FormField = (props) => {
   const { type, standared } = props
@@ -15,7 +16,13 @@ export const FormField = (props) => {
       return <p>Standara property shouold have BORDEREFFECT,BACKGROUNDEFFECT,LABELEFFECT as a props value</p>
     }
   } else if (type.toUpperCase() === 'SELECT') {
-    return <Select {...props}/>
+    const {multi,multiple} = props
+    if(multi || multiple){
+      return <MultiSelect {...props}/>
+    }else{
+      return <Select {...props}/>
+    }
+    
   } else if (type.toUpperCase() === 'CHECKBOX') {
     return <CheckBox {...props} />
   } else if (type.toUpperCase() === 'RADIO' || type.toUpperCase() === 'RADIOBUTTON') {
