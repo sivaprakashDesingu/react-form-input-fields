@@ -1,10 +1,18 @@
 {
   "name": "react-form-fields",
   "version": "1.0.0",
-  "description": "Libary contains all form fields",
+  "description": "react-form-fields library will be used to create innovative/varieties of form fields. The library has form fields such as Text Box,Switch,Checkbox,Radio Button,Select/Dropdown.",
   "author": "sivaprakash D",
   "license": "MIT",
-  "repository": "sivaprakash D/react-form-fields",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sivaprakashDesingu/react-input-textboxs.git"
+  },
+  "keywords": [
+    "react",
+    "FormInputs"
+  ],
+  "homepage": "https://www.npmjs.com/package/react-form-fields",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
