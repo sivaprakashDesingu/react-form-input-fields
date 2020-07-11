@@ -24,7 +24,7 @@ export default class TextBoxs extends React.Component {
         <div>
         <FormField
           type="email"
-          standared="bordereffect"
+          standard="bordereffect"
           value={name}
           keys={'name'}
           effect={'effect_1'}

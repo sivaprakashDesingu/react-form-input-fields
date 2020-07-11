@@ -9,6 +9,7 @@ export default class MultiSelect extends React.Component {
         this.state = {
             tempvalue: null,
             filterValue: '',
+            maxResultCount:0,
             isOpened: false,
             isFloated: false
         }

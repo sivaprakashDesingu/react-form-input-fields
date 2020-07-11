@@ -5,15 +5,15 @@ BackgroundEffect.defaultProps = {
     value: '',
     type: 'text',
     placeholder: 'Enter Text',
-    standared:'backgroundeffect',
+    standard:'backgroundeffect',
     readOnly: false,
     effect: 'effect_1'
 }
 
 export default function BackgroundEffect(props) {
-    const { value, type, placeholder, readOnly, handleOnChange, effect,standared } = props
+    const { value, type, placeholder, readOnly, handleOnChange, effect,standard } = props
     return (
-        <div className={`${styles.textboxwrapper} ${styles[standared]}`}>
+        <div className={`${styles.textboxwrapper} ${styles[standard]}`}>
             <input
                 className={styles[effect]}
                 type={type || ''}
