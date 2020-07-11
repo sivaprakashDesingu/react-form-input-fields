@@ -1,18 +1,18 @@
-# react-form-fields
+# react-form-input-fields
 
-react-form-fields library will be used to create innovative/varieties of form fields. The library has form fields such as Text Box,Switch,Checkbox,Radio Button,Select/Dropdown.
+react-form-input-fields library will be used to create innovative/varieties of form fields. The library has form fields such as Text Box,Switch,Checkbox,Radio Button,Select/Dropdown.
   
 
 ## Install and Setup
 
 ``` 
-npm install react-form-fields
+npm install react-form-input-fields
 ```
 
 ## Setup in code
 
 ``` 
-import { FormField } from 'react-form-fields'
+import { FormField } from 'react-form-input-fields'
 ```
 
 ## How to render Textbox
