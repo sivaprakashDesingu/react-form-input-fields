@@ -6,7 +6,7 @@ export default class Select extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectedvalue: ['China'],
+            selectedvalue: ['Afganistan','Albania','Angola'],
             option: [
                 { label: 'Afganistan', value: "Afganistan" },
                 { label: 'Albania', value: "Albania" },
@@ -16,25 +16,28 @@ export default class Select extends React.Component {
                 { label: 'Angola', value: "Angola" },
 
             ],
-            option1: ["India" ,"China","Japan","Indo"]
+            option1: ["India", "China", "Japan", "Indo"]
         }
     }
 
     hanldeOnChange(value) {
-        this.setState({selectedCheckBox:value})
+        this.setState({ selectedCheckBox: value })
     }
 
     render() {
         return (
-            <FormField
-                type="select"
-                value={this.state.selectedvalue}
-                filter
-                multi
-                option={this.state.option1}
-                label={'Select Country'}
-                keys={"country"}
-                hanldeOnChange={(value) => this.hanldeOnChange(value)} />
+            <div>
+                <h2>Single Value Dropdown</h2>
+                <FormField
+                    type="select"
+                    value={this.state.selectedvalue}
+                    filter
+                    option={this.state.option}
+                    label={'Select Country'}
+                    keys={"country"}
+                    hanldeOnChange={(value) => this.hanldeOnChange(value)} />
+            </div>
+
         )
     }
 }

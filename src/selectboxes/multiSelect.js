@@ -46,8 +46,23 @@ export default class MultiSelect extends React.Component {
     }
 
 
-    getCurrentSelectedValue = (value,option) => {
-
+    getCurrentSelectedValue = (allValues,value,position,key) => {
+        const indexes = value.map(item => allValues.indexOf(item))
+        if(key === 'down_up' || key === 'down'){
+            
+            if(indexes.includes(position)){
+                return this.getCurrentSelectedValue(allValues,value,position===(allValues.length -1) ? 0 : position+1,key)
+            }else{
+                return position
+            }
+        }else if(key === 'up'){
+            
+            if(indexes.includes(position)){
+                return this.getCurrentSelectedValue(allValues,value,position===0 ? (allValues.length -1 ) : position-1,key)
+            }else{
+                return position
+            }
+        }
     }
 
     handleKeyDown(e) {
@@ -61,16 +76,19 @@ export default class MultiSelect extends React.Component {
         } else {
             values = option
         }
-
         if (this.state.isOpened && keyCodes.includes(keyCode)) {
             if ((keyCode === 38 || keyCode === 40) && tempvalue === null) {
-                tempvalue = values[0]
+                tempvalue = values[this.getCurrentSelectedValue(values,value,0,'down_up')]
             } else if (keyCode === 40) {
                 let index = values.indexOf(tempvalue)
-                tempvalue = index === (values.length - 1) ? values[0] : values[index + 1]
+                tempvalue = index === (values.length - 1) ?
+                    values[this.getCurrentSelectedValue(values,value,0,'down')] :
+                    values[this.getCurrentSelectedValue(values,value,index+1,'down')]
             } else if (keyCode === 38) {
                 let index = values.indexOf(tempvalue)
-                tempvalue = index === 0 ? values[values.length - 1] : values[index - 1]
+                tempvalue = index === 0 ? 
+                    values[this.getCurrentSelectedValue(values,value,(values.length - 1),'up')] :
+                    values[this.getCurrentSelectedValue(values,value,index-1,'up')]
             } else if (keyCode === 13) {
                 this.setState({
                     isOpened: false,
