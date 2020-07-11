@@ -5,13 +5,13 @@ LabelEffect.defaultProps = {
     value: '',
     type: 'text',
     placeholder: 'Enter Text',
-    standared: 'label_effect',
+    standard: 'label_effect',
     readOnly: false,
     effect: 'effect_1'
 }
 
 export default function LabelEffect(props) {
-    const { value, type, placeholder, readOnly, handleOnChange, effect, standared,keys } = props
+    const { value, type, placeholder, readOnly, handleOnChange, effect, standard,keys } = props
 
     function renderSubClass(value){
         value= value.trim();
@@ -23,7 +23,7 @@ export default function LabelEffect(props) {
     }
 
     return (
-        <div className={`${styles.textboxwrapper} ${styles[standared]}`}>
+        <div className={`${styles.textboxwrapper} ${styles[standard]}`}>
             <input 
                 id={keys}
                 className={`${styles[effect]} ${styles[renderSubClass(value)]}`}

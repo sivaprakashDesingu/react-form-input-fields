@@ -2,7 +2,7 @@ import { BorderEffect, BackgroundEffect, LabelEffect } from './textboxes'
 import { Switch } from './switch'
 import CheckBox from './checkbox/checkbox'
 import RadioButton from './radio/radio'
-import Select from './selectboxes'
+import { Select, MultiSelect } from './selectboxes/index'
 export {
     BorderEffect,
     BackgroundEffect,
@@ -10,5 +10,6 @@ export {
     Switch,
     CheckBox,
     RadioButton,
-    Select
+    Select,
+    MultiSelect
 }

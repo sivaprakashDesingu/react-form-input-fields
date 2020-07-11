@@ -1,6 +1,6 @@
 
 import React from 'react';
-import styles from './../styles.module.css'
+import styles from './../styles.module.css';
 
 
 export default class Select extends React.Component {
@@ -8,32 +8,44 @@ export default class Select extends React.Component {
         super(props)
         this.state = {
             tempvalue: null,
+            filterValue:'',
             isOpened: false,
             isFloated:false
         }
+
         this.textInput = React.createRef();
         this.handleKeyDown = this.handleKeyDown.bind(this);
-        this.handleClickOutside = this.handleClickOutside.bind(this)
+        this.handleClickOutside = this.handleClickOutside.bind(this);
 
     }
 
-    componentDidMount() {
+    componentDidMount () {
         document.addEventListener("keydown", this.handleKeyDown, false);
         document.addEventListener('mousedown', this.handleClickOutside, false)
     }
 
-    componentWillUnmount() {
+    componentWillUnmount () {
         document.removeEventListener("keydown", this.handleKeyDown, false);
         //document.removeEventListener("mousedown", this.handleMouseDown);
     }
 
-    handleClickOutside(e) {
+    componentDidUpdate(prevProps,prevState) {
+
+        if(this.props.value !== prevProps.value){
+            this.setState({filterValue:this.props.value,value:this.props.value})
+        }
+    }
+
+    handleClickOutside (e) {
         if (this.state.isOpened && this.handleDocumentClickRef.contains(e.target) === false) {
+            if(this.state.tempvalue === null){
+                this.handleFloatLabel(false)
+            }
             this.setState({ isOpened: false });
         }
     }
 
-    handleKeyDown(e) {
+    handleKeyDown (e) {
         const keyCodes = [40, 38, 13, 9]
         const { keyCode } = e
         let { tempvalue } = this.state
@@ -62,82 +74,151 @@ export default class Select extends React.Component {
                     this.props.hanldeOnChange(tempvalue)
                 });
             } else if (keyCode === 9) {
+                if(this.state.tempvalue === null){
+                    this.handleFloatLabel(false)
+                }
                 this.setState({ isOpened: false })
             }
         }
         this.setState({ tempvalue })
     }
 
-    handleChange(e, value) {
+    handleChange (e, value) {
         e.preventDefault()
         this.setState({
-            isOpened: false
+            isOpened: false,
+            tempvalue:value
         }, () => {
             this.props.hanldeOnChange(value)
         });
     }
 
-
-    handleFocus(e) {
-        debugger
+    handleFocus = (event) => {
         this.setState({ isOpened: true })
     }
 
-    handleBlur() {
+    handleBlur () {
         this.setState({ isOpened: false })
     }
 
-    renderOption = (option, tempvalue) => {
-
+    renderOption = (option, value, tempvalue, filterValue, filter) => {
+        let notfound = 0;
         if (option.length >= 1 && typeof (option[0]) === 'object') {
+            
             return option.map((item, i) => {
-                return (
-                    <li
-                        key={'select' + i}
-                        onClick={(e) => this.handleChange(e, item.value)}
-                        className={`${styles.material_custom_select_item} ${tempvalue === item.value ? styles.active_item : ''}`}
-                        data-index={i + 1}>{item.label}</li>
-                )
-            })
+                /*if (!filter && filterValue.includes(item.value)) {
+                    return null;
+                } else*/ if (filter && filterValue.trim().length >= 1) {
+                    if (item.value.toUpperCase().includes(filterValue.toUpperCase())) {
+                        return (
+                            <li
+                                key={'select' + i}
+                                onClick={(e) => this.handleChange(e, item.value)}
+                                className={`${styles.material_custom_select_item} ${tempvalue === item.value ? styles.active_item : ''}`}
+                                data-index={i + 1}>{item.label}</li>
+                        )
+                    }else {
+                        notfound++;
+                        if (notfound === option.length) {
+                            return (
+                                <li  className={`${styles.material_custom_select_item}`}>
+                                    <span>{"Not Found"}</span>
+                                </li>
+                            );
+                        } else {
+                            
+                            return null;
+                        }
+                    } 
+                } else {
+                    return (
+                        <li
+                            key={'select' + i}
+                            onClick={(e) => this.handleChange(e, item.value)}
+                            className={`${styles.material_custom_select_item} ${tempvalue === item.value ? styles.active_item : ''}`}
+                            data-index={i + 1}>{item.label}</li>
+                    );
+                }
+                
+            });
         } else {
             return option.map((item, i) => {
-                return (
-                    <li
+                
+                /*if (!filter && filterValue.includes(item)) {
+                    return null;
+                } else*/ if (filter && filterValue.trim().length >= 1) {
+                    if (item.toUpperCase().includes(filterValue.toUpperCase())) {
+                        return (
+                            <li
+                            key={'select' + i}
+                            onClick={(e) => this.handleChange(e, item)}
+                            className={`${styles.material_custom_select_item} ${tempvalue === item ? styles.active_item : ''}`}
+                            data-index={i + 1}>{item}</li>
+                        );
+                    } else {
+                        notfound++;
+                        if (notfound === option.length) {
+                            return (
+                                <li  className={`${styles.material_custom_select_item}`}>
+                                    <span>{"Not Found"}</span>
+                                </li>
+                            );
+                        } else {
+                            
+                            return null;
+                        }
+                    }
+                } else {
+                    return (
+                        <li
                         key={'select' + i}
                         onClick={(e) => this.handleChange(e, item)}
                         className={`${styles.material_custom_select_item} ${tempvalue === item ? styles.active_item : ''}`}
                         data-index={i + 1}>{item}</li>
-                )
-            })
+                    );
+                }
+            });
         }
     }
-    handleFloatLabel(value,decision)  {
-        debugger
-        console.log(value)
+
+    handleFloatLabel(value)  {
+        this.setState({isFloated:value})
     }
 
     render() {
 
-        const { isOpened, tempvalue,isFloated } = this.state
-        const { option, label, value, keys } = this.props
-       
+        const { isOpened, tempvalue,isFloated,filterValue } = this.state
+        const { option, label, value, keys,filter } = this.props
+
         return (
-            <div className={`${styles.select_wrapper_material} ${isOpened ? styles.opened : null}`}>
+            <div className={`${styles.select_wrapper_material} ${isOpened ? styles.opened : ''} ${isFloated ? styles.floated : ''}`}>
+                <form autoComplete="new-form">
                 <label 
                 htmlFor={keys}
                 className={styles.select_label}
                 >{label}</label>
                 <input type="text"
-                    value={value}
+                    value={filterValue}
                     id={keys}
                     ref={this.textInput}
-                    onFocus={() => [this.handleFocus(e),this.handleFloatLabel(true,'focus')]}
-                    readOnly
-                    className={styles.combo_input} />
+                    autoComplete={`new-off`}
+                    onFocus={(event) => [
+                        event.target.setAttribute('autocomplete', 'off'),
+                        this.handleFocus(event),
+                        this.handleFloatLabel(true)]}
+                    readOnly={!filter}
+                    onChange={
+                        filter
+                            ? e => this.setState({filterValue:e.target.value})
+                            : () => console.log()
+                    }
+                    className={styles.combo_input} />    
+                </form>
+                
                 <ul
                     ref={node => (this.handleDocumentClickRef = node)}
                     className={styles.material_custom_select}>
-                    {this.renderOption(option, tempvalue)}
+                    {this.renderOption(option, value, tempvalue,filterValue,filter)}
                 </ul>
 
             </div>

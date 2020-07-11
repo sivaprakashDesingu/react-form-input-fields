@@ -41,7 +41,6 @@ export default class CheckBox extends React.Component {
                     valueToBeReturned={data.value}
                     label={data.label}
                     keys={data.label}
-
                     hanldeOnChange={(value) => this.hanldeOnChange(value)} />
             )
         })
