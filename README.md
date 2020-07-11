@@ -13,6 +13,7 @@ npm install react-form-input-fields
 
 ``` 
 import { FormField } from 'react-form-input-fields'
+import 'react-form-input-fields/dist/index.css'
 ```
 
 ## How to render Textbox
@@ -24,7 +25,7 @@ If you want to use text box in component follow the below method, type propery w
 
 <FormField
 type="email" || type="password" || type="text" || type="number"
-standared="bordereffect"
+standard="bordereffect"
 value={name}
 keys={'name'}
 effect={'effect_1'}

@@ -32,7 +32,7 @@ export default class TextBoxs extends React.Component {
           placeholder={'Enter Email'} />
           <FormField
           type="text"
-          standared="bordereffect"
+          standard="bordereffect"
           value={name}
           keys={'name'}
           effect={'effect_2'}
@@ -40,7 +40,7 @@ export default class TextBoxs extends React.Component {
           placeholder={'Enter your name'} />
           <FormField
           type="password"
-          standared="bordereffect"
+          standard="bordereffect"
           value={name}
           keys={'name'}
           effect={'effect_3'}
@@ -48,7 +48,7 @@ export default class TextBoxs extends React.Component {
           placeholder={'Enter the password'} />
           <FormField
           type="number"
-          standared="bordereffect"
+          standard="bordereffect"
           value={name}
           keys={'name'}
           effect={'effect_4'}
@@ -56,7 +56,7 @@ export default class TextBoxs extends React.Component {
           placeholder={'Enter the password'} />
           <FormField
           type="number"
-          standared="bordereffect"
+          standard="bordereffect"
           value={name}
           keys={'name'}
           effect={'effect_5'}
@@ -72,7 +72,7 @@ export default class TextBoxs extends React.Component {
 
         <FormField
           type="text"
-          standared="labeleffect"
+          standard="labeleffect"
           value={name}
           keys={'name'}
           effect={'effect_1'}
@@ -81,7 +81,7 @@ export default class TextBoxs extends React.Component {
 
         <FormField
           type="text"
-          standared="labeleffect"
+          standard="labeleffect"
           value={name}
           keys={'name'}
           effect={'effect_5'}
@@ -91,7 +91,7 @@ export default class TextBoxs extends React.Component {
 
         <FormField
           type="text"
-          standared="labeleffect"
+          standard="labeleffect"
           value={name}
           keys={'name'}
           effect={'effect_7'}

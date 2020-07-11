@@ -1,11 +1,9 @@
 import React from 'react'
-import { FormField } from 'react-form-fields'
 import TextBoxs from './TextBoxes'
 import SwitchBox from './Switch'
 import CheckBox from './checkBox'
 import RadioButton from './radiobox'
 import Select from './select'
-import 'react-form-fields/dist/index.css'
 
 
 export default class extends React.Component {

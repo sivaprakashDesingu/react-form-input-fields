@@ -3,14 +3,14 @@ import { BorderEffect, BackgroundEffect, LabelEffect, Switch, CheckBox, RadioBut
 import { MultiSelect } from './selectboxes';
 
 export const FormField = (props) => {
-  const { type, standared } = props
-
+  const { type, standard } = props
+  console.log(props)
   if (type.toUpperCase() === 'TEXT' || type.toUpperCase() === 'PASSWORD' || type.toUpperCase() === 'NUMBER' || type.toUpperCase() === 'EMAIL') {
-    if (standared.toUpperCase() === 'BORDEREFFECT') {
+    if (standard.toUpperCase() === 'BORDEREFFECT') {
       return <BorderEffect {...props} />
-    } else if (standared.toUpperCase() === 'BACKGROUNDEFFECT') {
+    } else if (standard.toUpperCase() === 'BACKGROUNDEFFECT') {
       return <BackgroundEffect {...props} />
-    } else if (standared.toUpperCase() === 'LABELEFFECT') {
+    } else if (standard.toUpperCase() === 'LABELEFFECT') {
       return <LabelEffect {...props} />
     } else {
       return <p>Standara property shouold have BORDEREFFECT,BACKGROUNDEFFECT,LABELEFFECT as a props value</p>
