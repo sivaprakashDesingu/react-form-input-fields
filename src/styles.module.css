@@ -471,7 +471,7 @@
 	top: 9px;
 	color: #aaa;
 	transition: 0.3s;
-	z-index: -1;
+	z-index: 1;
 	letter-spacing: 0.5px;
 }
 .labeleffect .effect_1:focus ~ .inp_label,
@@ -503,7 +503,7 @@
 	top: 9px;
 	color: #aaa;
 	transition: 0.3s;
-	z-index: -1;
+	z-index: 1;
 	letter-spacing: 0.5px;
 }
 .labeleffect .effect_2:focus ~ .inp_label,
@@ -550,7 +550,7 @@
 	top: 9px;
 	color: #aaa;
 	transition: 0.3s;
-	z-index: -1;
+	z-index: 1;
 	letter-spacing: 0.5px;
 }
 .labeleffect .effect_3:focus ~ .inp_label,
@@ -622,7 +622,7 @@
 	top: calc(50% - 8px);
 	color: #aaa;
 	transition: 0.3s;
-	z-index: -1;
+	z-index: 1;
 	letter-spacing: 0.5px;
 }
 .labeleffect .effect_4:focus ~ .inp_label,
@@ -688,7 +688,7 @@
 	top: calc(50% - 8px);
 	color: #aaa;
 	transition: 0.3s;
-	z-index: -1;
+	z-index: 1;
 	letter-spacing: 0.5px;
 }
 .labeleffect .effect_5:focus ~ .inp_label,
@@ -766,7 +766,7 @@
 	top: calc(50% - 8px);
 	color: #aaa;
 	transition: 0.3s;
-	z-index: -1;
+	z-index: 1;
 	letter-spacing: 0.5px;
 }
 .labeleffect .effect_6:focus ~ .inp_label,
@@ -810,7 +810,7 @@
 	top: calc(50% - 8px);
 	color: #aaa;
 	transition: 0.3s;
-	z-index: -1;
+	z-index: 1;
 	letter-spacing: 0.5px;
 }
 .labeleffect .effect_7:focus ~ .inp_label,
@@ -858,7 +858,7 @@
 	top: calc(50% - 8px);
 	color: #aaa;
 	transition: 0.3s;
-	z-index: -1;
+	z-index: 1;
 	letter-spacing: 0.5px;
 }
 .labeleffect .effect_8:focus ~ .inp_label,
@@ -910,7 +910,7 @@
 	top: calc(50% - 8px);
 	color: #aaa;
 	transition: 0.3s;
-	z-index: -1;
+	z-index: 1;
 	letter-spacing: 0.5px;
 }
 .labeleffect .effect_9:focus ~ .inp_label,

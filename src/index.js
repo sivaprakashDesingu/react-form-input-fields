@@ -4,7 +4,6 @@ import { MultiSelect } from './selectboxes';
 
 export const FormField = (props) => {
   const { type, standard } = props
-  console.log(props)
   if (type.toUpperCase() === 'TEXT' || type.toUpperCase() === 'PASSWORD' || type.toUpperCase() === 'NUMBER' || type.toUpperCase() === 'EMAIL') {
     if (standard.toUpperCase() === 'BORDEREFFECT') {
       return <BorderEffect {...props} />

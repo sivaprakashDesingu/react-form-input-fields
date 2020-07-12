@@ -23,9 +23,7 @@ export default function BackgroundEffect(props) {
                 readOnly={readOnly}
             ></input>
 
-            <span className={styles.focus_bg}>
-                
-            </span>
+            <span className={styles.focus_bg}>  </span>
         </div>
     );
 }
