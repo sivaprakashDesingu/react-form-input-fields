@@ -2,6 +2,9 @@
 
 react-form-input-fields library will be used to create innovative/varieties of form fields. The library has form fields such as Text Box,Switch,Checkbox,Radio Button,Select/Dropdown.
   
+# Demo
+
+Checkout the [Demo](https://library-demos.herokuapp.com/react-form-input-fields)
 
 ## Install and Setup
 
