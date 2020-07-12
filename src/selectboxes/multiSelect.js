@@ -98,7 +98,7 @@ export default class MultiSelect extends React.Component {
                     const prevValues = this.props.value
                     prevValues.push(tempvalue)
                     this.textInput.current.blur();
-                    this.props.hanldeOnChange(tempvalue)
+                    this.props.hanldeOnChange(prevValues)
                 });
             } else if (keyCode === 9) {
                 if (this.state.tempvalue === null) {

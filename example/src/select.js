@@ -6,7 +6,7 @@ export default class Select extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectedvalue: ['Afganistan','Albania','Angola'],
+            selectedvalue: ['Afganistan', 'Albania', 'Angola'],
             option: [
                 { label: 'Afganistan', value: "Afganistan" },
                 { label: 'Albania', value: "Albania" },
@@ -16,12 +16,13 @@ export default class Select extends React.Component {
                 { label: 'Angola', value: "Angola" },
 
             ],
+            selectedvalue2: ['India'],
             option1: ["India", "China", "Japan", "Indo"]
         }
     }
 
-    hanldeOnChange(value) {
-        this.setState({ selectedCheckBox: value })
+    hanldeOnChange(value,key) {
+        this.setState({ [key]: value })
     }
 
     render() {
@@ -30,12 +31,22 @@ export default class Select extends React.Component {
                 <h2>Single Value Dropdown</h2>
                 <FormField
                     type="select"
+                    value={this.state.selectedvalue2}
+                    filter
+                    option={this.state.option1}
+                    label={'Select Country'}
+                    keys={"selectedvalue"}
+                    hanldeOnChange={(value) => this.hanldeOnChange(value,'selectedvalue2')} />
+                <h2>Multi Value Dropdown</h2>
+                <FormField
+                    type="select"
                     value={this.state.selectedvalue}
+                    multi
                     filter
                     option={this.state.option}
                     label={'Select Country'}
-                    keys={"country"}
-                    hanldeOnChange={(value) => this.hanldeOnChange(value)} />
+                    keys={"selectedvalue2"}
+                    hanldeOnChange={(value) => this.hanldeOnChange(value,'selectedvalue')} />
             </div>
 
         )
