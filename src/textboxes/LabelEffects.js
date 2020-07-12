@@ -15,11 +15,11 @@ export default function LabelEffect(props) {
 
     function renderSubClass(value) {
 
-        if (type = "number" || type === "NUMBER") {
+        if (type === "number" || type === "NUMBER") {
             if (String(value.length) >= 1) {
                 return 'has_content';
             } else {
-                return '';
+                return ''
             }
         }
         else {
