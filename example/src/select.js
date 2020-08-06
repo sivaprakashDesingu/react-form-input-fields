@@ -1,6 +1,6 @@
 import React from 'react'
-import { FormField } from 'react-form-fields'
-import 'react-form-fields/dist/index.css'
+import { FormField } from 'react-form-input-fields'
+import 'react-form-input-fields/dist/index.css'
 
 export default class Select extends React.Component {
     constructor(props) {
@@ -21,7 +21,7 @@ export default class Select extends React.Component {
         }
     }
 
-    hanldeOnChange(value,key) {
+    handleOnChange(value,key) {
         this.setState({ [key]: value })
     }
 
@@ -36,7 +36,7 @@ export default class Select extends React.Component {
                     option={this.state.option1}
                     label={'Select Country'}
                     keys={"selectedvalue"}
-                    hanldeOnChange={(value) => this.hanldeOnChange(value,'selectedvalue2')} />
+                    handleOnChange={(value) => this.handleOnChange(value,'selectedvalue2')} />
                 <h2>Multi Value Dropdown</h2>
                 <FormField
                     type="select"
@@ -46,7 +46,7 @@ export default class Select extends React.Component {
                     option={this.state.option}
                     label={'Select Country'}
                     keys={"selectedvalue2"}
-                    hanldeOnChange={(value) => this.hanldeOnChange(value,'selectedvalue')} />
+                    handleOnChange={(value) => this.handleOnChange(value,'selectedvalue')} />
             </div>
 
         )

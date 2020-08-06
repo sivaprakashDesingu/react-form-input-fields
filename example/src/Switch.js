@@ -1,6 +1,6 @@
 import React from 'react'
-import { FormField }  from 'react-form-fields'
-import 'react-form-fields/dist/index.css'
+import { FormField }  from 'react-form-input-fields'
+import 'react-form-input-fields/dist/index.css'
 
 export default class SwitchBox extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ export default class SwitchBox extends React.Component {
           mode: true
         }
       }
-      hanldeOnChange(value){
+      handleOnChange(value){
           this.setState({mode:value})
       }
       render(){
@@ -20,7 +20,7 @@ export default class SwitchBox extends React.Component {
                 type="switch"
                 value={mode}
                 label="Toggle" 
-                hanldeOnChange={(value) => this.hanldeOnChange(value)}/>
+                handleOnChange={(value) => this.handleOnChange(value)}/>
             </div>
           );
       }

@@ -12,14 +12,14 @@ RadioButton.defaultProps = {
 }
 
 export default function RadioButton(props) {
-    const { value, label, group, keys, hanldeOnChange, valueToBeReturned, disabled } = props
+    const { value, label, group, keys, handleOnChange, valueToBeReturned, disabled } = props
     return (
         <div className={styles.radio_button_wrapper}>
             <label className={styles.pure_material_radio}>
                 <input type="radio" name={group}
                     disabled={disabled}
                     checked={value}
-                    onChange={(e) => hanldeOnChange(valueToBeReturned)}
+                    onChange={(e) => handleOnChange(valueToBeReturned)}
                     className={`${styles.radio_input} ${value ? styles.rbChecked : null}`}
                 />
                 <span className={styles.label_text}>{label}</span>

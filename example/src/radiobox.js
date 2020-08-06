@@ -1,6 +1,6 @@
 import React from 'react'
-import { FormField } from 'react-form-fields'
-import 'react-form-fields/dist/index.css'
+import { FormField } from 'react-form-input-fields'
+import 'react-form-input-fields/dist/index.css'
 
 export default class RadioButton extends React.Component {
     constructor(props) {
@@ -16,7 +16,7 @@ export default class RadioButton extends React.Component {
         }
     }
     
-    hanldeOnChange(value) {
+    handleOnChange(value) {
         // const {selectedCheckBox}=  this.state
         // const index = selectedCheckBox.indexOf(value) 
         // if(index === -1){
@@ -40,7 +40,7 @@ export default class RadioButton extends React.Component {
                     valueToBeReturned={data.value}
                     label={data.label}
                     keys={data.label}
-                    hanldeOnChange={(value) => this.hanldeOnChange(value)} />
+                    handleOnChange={(value) => this.handleOnChange(value)} />
             )
         })
     }

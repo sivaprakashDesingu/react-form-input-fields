@@ -1,6 +1,7 @@
 
 import React from 'react';
 import styles from './../styles.module.css';
+import downarrrow from '../assests/images/down-arrow.png';
 
 
 export default class MultiSelect extends React.Component {
@@ -98,7 +99,7 @@ export default class MultiSelect extends React.Component {
                     const prevValues = this.props.value
                     prevValues.push(tempvalue)
                     this.textInput.current.blur();
-                    this.props.hanldeOnChange(prevValues)
+                    this.props.handleOnChange(prevValues)
                 });
             } else if (keyCode === 9) {
                 if (this.state.tempvalue === null) {
@@ -120,7 +121,7 @@ export default class MultiSelect extends React.Component {
         }, () => {
             const prevValues = this.props.value
             prevValues.push(value)
-            this.props.hanldeOnChange(prevValues)
+            this.props.handleOnChange(prevValues)
         });
     }
 
@@ -220,7 +221,7 @@ export default class MultiSelect extends React.Component {
             filterValue: ''
         }, () => {
             value.splice(index, 1);
-            this.props.hanldeOnChange(value)
+            this.props.handleOnChange(value)
         });
     }
 
@@ -280,7 +281,7 @@ export default class MultiSelect extends React.Component {
                     <label
                         htmlFor={keys}
                         className={styles.select_label}
-                    >{label}</label>
+                    >{label} <span className={styles.down_arrow}><img src={downarrrow} width={15} height={15} alt="Down arrow" /></span></label> 
                     <input type="text"
                         value={filterValue}
                         id={keys}

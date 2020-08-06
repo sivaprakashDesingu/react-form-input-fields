@@ -1,6 +1,6 @@
 import React from 'react'
-import { FormField } from 'react-form-fields'
-import 'react-form-fields/dist/index.css'
+import { FormField } from 'react-form-input-fields'
+import 'react-form-input-fields/dist/index.css'
 
 export default class TextBoxs extends React.Component {
 
@@ -67,7 +67,8 @@ export default class TextBoxs extends React.Component {
         
 
 
-        <h2 style={{textAlign:'center'}}>BackGround effects</h2>
+        {/* <h2 style={{textAlign:'center'}}>BackGround effects</h2> */}
+
         <h2 style={{textAlign:'center'}}>Label effects</h2>
 
         <FormField

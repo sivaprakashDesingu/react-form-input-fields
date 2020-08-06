@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styles from './../styles.module.css';
-
+import downarrrow from '../assests/images/down-arrow.png';
 
 export default class Select extends React.Component {
     constructor(props) {
@@ -71,7 +71,7 @@ export default class Select extends React.Component {
                     isOpened: false
                 }, () => {
                     this.textInput.current.blur();
-                    this.props.hanldeOnChange(tempvalue)
+                    this.props.handleOnChange(tempvalue)
                 });
             } else if (keyCode === 9) {
                 if(this.state.tempvalue === null){
@@ -89,7 +89,7 @@ export default class Select extends React.Component {
             isOpened: false,
             tempvalue:value
         }, () => {
-            this.props.hanldeOnChange(value)
+            this.props.handleOnChange(value)
         });
     }
 
@@ -193,10 +193,11 @@ export default class Select extends React.Component {
         return (
             <div className={`${styles.select_wrapper_material} ${isOpened ? styles.opened : ''} ${isFloated ? styles.floated : ''}`}>
                 <form autoComplete="new-form">
+                
                 <label 
                 htmlFor={keys}
                 className={styles.select_label}
-                >{label}</label>
+                >{label}<span className={styles.down_arrow}><img src={downarrrow} width={15} height={15} alt="Down arrow" /></span></label>
                 <input type="text"
                     value={filterValue}
                     id={keys}

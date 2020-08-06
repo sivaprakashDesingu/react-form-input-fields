@@ -65,7 +65,7 @@ value={'Male'}
 option={option}
 label={'Select Gender'}
 keys={"gender"}
-hanldeOnChange={(value) =>  this.hanldeOnChange(value)}  />
+handleOnChange={(value) =>  this.handleOnChange(value)}  />
 ```
 ### Single value with Filter
 This will be used to filter value among the options, if you have more the option in array you can filter them by provide value in text box.
@@ -85,7 +85,7 @@ value={'Afganistan'}
 option={option}
 label={'Select your country'}
 keys={"country"}
-hanldeOnChange={(value) =>  this.hanldeOnChange(value)}  />
+handleOnChange={(value) =>  this.handleOnChange(value)}  />
 ```
 ### Multi value example code
 ```
@@ -102,7 +102,7 @@ value={['Tamil','Hindi']}
 option={option}
 label={'Select Languages'}
 keys={"language"}
-hanldeOnChange={(value) =>  this.hanldeOnChange(value)}  />
+handleOnChange={(value) =>  this.handleOnChange(value)}  />
 ```
 ### Multi value with Filter and max result
 maxResultCount property will be used to show selected result which has to be shown on the component.
@@ -122,7 +122,7 @@ value={['Tamil','Hindi']}
 option={option}
 label={'Select Languages'}
 keys={"language"}
-hanldeOnChange={(value) =>  this.hanldeOnChange(value)}  />
+handleOnChange={(value) =>  this.handleOnChange(value)}  />
 ```
 ## How to render Switch 
 Switch field will be used when we have option like ***off/On*** controll.
@@ -131,7 +131,7 @@ Switch field will be used when we have option like ***off/On*** controll.
 type="switch"
 value={mode}
 label="Toggle"
-hanldeOnChange={(value) =>  this.hanldeOnChange(value)}/>
+handleOnChange={(value) =>  this.handleOnChange(value)}/>
 ```
 
 ## How to render Check Box
@@ -152,7 +152,7 @@ value={selectedCheckBox.includes(data.value) ? true : false}
 valueToBeReturned={data.value}
 label={data.label}
 keys={data.label}
-hanldeOnChange={(value) =>  this.hanldeOnChange(value)}/>
+handleOnChange={(value) =>  this.handleOnChange(value)}/>
 ```
 
 ## How to render Radio button
@@ -170,5 +170,5 @@ value={selectedCheckBox === data.value ? true : false}
 valueToBeReturned={data.value}
 label={data.label}
 keys={data.label}
-hanldeOnChange={(value) =>  this.hanldeOnChange(value)}  />
+handleOnChange={(value) =>  this.handleOnChange(value)}  />
 ```

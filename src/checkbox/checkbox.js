@@ -11,7 +11,7 @@ CheckBox.defaultProps = {
 }
 
 export default function CheckBox(props) {
-    const { value, label, effect, keys, hanldeOnChange, valueToBeReturned, disabled } = props
+    const { value, label, effect, keys, handleOnChange, valueToBeReturned, disabled } = props
     return (
 
         <div className={styles.checkbox_wrapper}>
@@ -21,7 +21,7 @@ export default function CheckBox(props) {
                         <input
                             disabled={disabled}
                             checked={value}
-                            onChange={(e) => hanldeOnChange(valueToBeReturned)}
+                            onChange={(e) => handleOnChange(valueToBeReturned)}
                             className={`${styles.checkbox_input} ${value ? styles.cbChecked : null}`}
                             type="checkbox" />
                         <span className={styles.checkbox_span}>{label}</span>
@@ -34,7 +34,7 @@ export default function CheckBox(props) {
                                 type="checkbox"
                                 disabled={disabled}
                                 checked={value}
-                                onChange={(e) => hanldeOnChange(valueToBeReturned)}
+                                onChange={(e) => handleOnChange(valueToBeReturned)}
                                 id={keys}
                                 className={`${styles.checkbox_input} ${value ? styles.cbChecked : null}`}
                             />

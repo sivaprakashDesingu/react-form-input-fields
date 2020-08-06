@@ -1418,12 +1418,20 @@ margin-bottom:20px;
 .select_wrapper_material .select_label {
 	position: absolute;
 	top: 40px;
+	width:100%;
     left: 0;
     transition: .3s ease all;
+}
+.select_wrapper_material .select_label .down_arrow{
+	position: absolute;
+    right: 0;
 }
 .select_wrapper_material.floated .select_label{
 	top: 15px;
     font-size: 12px;
+}
+.select_wrapper_material.floated .select_label .down_arrow{
+	bottom: -30px;
 }
 /**
  * On Active
@@ -1453,6 +1461,13 @@ margin-bottom:20px;
 .multi_select.with_value .select_label{
 	top:5px;
 	font-size:12px;
+}
+.multi_select.with_value .select_label{
+	top:5px;
+	font-size:12px;
+}
+.multi_select.with_value .select_label .down_arrow{
+	display:none;
 }
 .value_wrapper .value_item{
 	padding: 8px 35px 8px 20px;
